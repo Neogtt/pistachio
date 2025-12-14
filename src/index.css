@@ -5,19 +5,21 @@
   --bg-panel-hover: #222228;
   --text-primary: #ffffff;
   --text-secondary: #a0a0a5;
-  --accent-color: #add8e6; /* Light Blue/Pistachio hint? Maybe green is better for Pistachio */
-  --accent-pistachio: #93c572; /* Pistachio Green */
+  --accent-color: #add8e6;
+  /* Light Blue/Pistachio hint? Maybe green is better for Pistachio */
+  --accent-pistachio: #93c572;
+  /* Pistachio Green */
   --border-color: #2c2c30;
-  
+
   /* Spacing */
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
-  
+
   /* Radius */
   --radius-md: 12px;
   --radius-lg: 16px;
-  
+
   /* Transitions */
   --transition-fast: 0.2s ease;
 }
@@ -40,13 +42,16 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--border-color);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
 }
@@ -61,38 +66,104 @@ body {
 }
 
 .panel:hover {
-  border-color: var(--accent-pistachio); /* Subtle interactive hint */
+  border-color: var(--accent-pistachio);
+  /* Subtle interactive hint */
 }
 
-/* App Layout */
+/* App Layout - Dashboard Style */
 .app-container {
-  display: grid;
-  grid-template-columns: 260px 1fr 300px; /* Sidebar | Feed | Widgets */
-  grid-template-rows: 100vh;
-  gap: var(--spacing-md);
+  max-width: 1440px;
+  margin: 0 auto;
   padding: var(--spacing-md);
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Header Panel */
+.header-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: radial-gradient(circle at top right, rgba(147, 197, 114, 0.1), var(--bg-panel));
+}
+
+.logo-section h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.highlight-text {
+  color: var(--accent-pistachio);
+}
+
+.date-badge {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  margin-left: 1rem;
+}
+
+/* Content Grid */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  /* News takes remaining space, Stats takes 340px */
+  gap: var(--spacing-md);
+  flex: 1;
+}
+
+/* Stats Section Styles (updates to StatsPanel to fit better) */
+.stats-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.news-section {
+  /* Ensure news feed takes height or scrolls if needed */
+  min-width: 0;
+  /* Prevent grid blowout */
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .app-container {
-    grid-template-columns: 80px 1fr; /* Compact Sidebar | Feed */
-    grid-template-rows: auto 1fr;
-    overflow-y: auto;
-    height: auto;
+  .content-grid {
+    grid-template-columns: 1fr;
+    /* Stack visually */
   }
-  
-  /* Widget panel might be hidden or moved */
-  .widgets-area {
-    display: none; 
+
+  .stats-section {
+    order: -1;
+    /* Show stats on top on mobile/tablet? Or keep bottom? User likes prices. */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Grid for stats on tablet */
   }
 }
 
 @media (max-width: 768px) {
-  .app-container {
+  .header-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .date-badge {
+    margin-left: 0;
+  }
+
+  .stats-section {
     grid-template-columns: 1fr;
-    padding: var(--spacing-sm);
+    /* Stack stats on mobile */
+    order: -1;
+    /* Important: Prices on top for mobile too */
   }
 }
