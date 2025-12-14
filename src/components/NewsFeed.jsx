@@ -17,6 +17,10 @@ const NewsFeed = () => {
                             src={news.image}
                             alt={news.title}
                             className="news-card-image"
+                            onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = "https://placehold.co/600x400/1a1a1e/FFF?text=No+Image";
+                            }}
                         />
                         <div className="news-card-content">
                             <div className="news-meta">

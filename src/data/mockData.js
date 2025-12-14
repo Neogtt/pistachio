@@ -5,7 +5,7 @@ export const newsData = [
     summary: "According to the latest USDA report, this year's pistachio harvest has reached its highest level in the last 5 years, driving global supplies up.",
     source: "AgroNews Global",
     date: "2 Hours Ago",
-    image: "https://images.unsplash.com/photo-1627993073998-38ad5471c260?q=80&w=600&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1627993073998-38ad5471c260?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const newsData = [
     summary: "With the healthy eating trend gaining momentum, demand for sugar-free and 100% natural pistachio butter has increased by 40% in European markets.",
     source: "Food Insight",
     date: "5 Hours Ago",
-    image: "https://images.unsplash.com/photo-1559563362-c667ba5f5480?q=80&w=600&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1601053702488-756cfad0d64d?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const newsData = [
     summary: "Global trade data indicates that pistachio exports from major producing regions have broken previous volume records this quarter.",
     source: "Market Watch",
     date: "1 Day Ago",
-    image: "https://images.unsplash.com/photo-1621956108137-0cb85b7367ce?q=80&w=600&auto=format&fit=crop" // Updated image to match export theme better or keep valid one
+    image: "https://images.unsplash.com/photo-1552016551-7f985559cf40?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ export const newsData = [
     summary: "A guide to the finest artisanal nut butters emerging from boutique producers in California and Sicily.",
     source: "Gourmet Weekly",
     date: "2 Days Ago",
-    image: "https://images.unsplash.com/photo-1516668743869-7c1975e53846?q=80&w=600&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800"
   }
 ];
 
