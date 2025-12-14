@@ -7,7 +7,7 @@ const StatsPanel = () => {
 
             {/* Price Ticker Widget */}
             <section className="panel" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-                <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '1rem', fontWeight: '500' }}>Piyasa Özeti</h3>
+                <h3 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '1rem', fontWeight: '500' }}>Market Summary</h3>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {marketStats.map((stat, index) => (
@@ -30,9 +30,9 @@ const StatsPanel = () => {
 
             {/* Subscribe / Call to Action Widget */}
             <section className="panel" style={{ padding: '1.5rem', background: 'linear-gradient(135deg, rgba(147, 197, 114, 0.1), rgba(0,0,0,0))' }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Bültene Abone Ol</h3>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Subscribe</h3>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-                    Haftalık fıstık piyasası raporunu kaçırma.
+                    Get the weekly global pistachio report delivered.
                 </p>
                 <button style={{
                     width: '100%',
@@ -44,7 +44,7 @@ const StatsPanel = () => {
                     fontWeight: 'bold',
                     cursor: 'pointer'
                 }}>
-                    Abone Ol
+                    Subscribe Now
                 </button>
             </section>
 
